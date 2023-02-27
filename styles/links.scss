@@ -1,3 +1,13 @@
 .link {
-    border: 5px solid red;
+  color: var(--black-color);
+  transition: var(--transition);
+  font-weight: 700;
+
+&:hover,
+&:active,
+&:focus {
+  color: var(--violet-color);
 }
+
+}
+
