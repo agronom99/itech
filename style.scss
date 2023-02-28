@@ -1,7 +1,8 @@
 @use "./styles/global.scss";
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@700&family=Poppins:wght@500;600&display=swap');
 
 html {
-  background-color: aqua;
+  background-color: var(--white-color);
     color: var(--black-color);
 
 }
@@ -26,5 +27,12 @@ a {
 
 li {
   list-style: none;
+}
+
+button {
+  background-color: transparent;
+  border: none;
+  outline: none;
+
 }
 
