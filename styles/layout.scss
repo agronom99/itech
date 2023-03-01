@@ -9,11 +9,7 @@ footer {
   align-items: center;
 }
 
-header .container{
-  display: flex;
-  justify-content: space-between;
-  gap: var(--gap);
-}
+
 
 .container {
   max-width: 100%;
@@ -32,10 +28,3 @@ header .container{
   }
 }
 
-.navigation ul{
-  display: flex;
-  gap: var(--gap);
-
-  font: var(--smaller-font);
-  
-}
