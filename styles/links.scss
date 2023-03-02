@@ -3,11 +3,13 @@
   transition: var(--transition);
   font-weight: 700;
 
-&:hover,
-&:active,
-&:focus {
+  &:hover,
+  &:active,
+  &:focus {
+    color: var(--violet-color);
+  }
+}
+
+.link_active {
   color: var(--violet-color);
 }
-
-}
-
