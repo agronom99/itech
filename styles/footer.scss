@@ -92,8 +92,13 @@ footer {
 
   .footer__buttons {
     display: flex;
+    flex-direction: column;
     gap: var(--gap);
     margin: calc(var(--gap) * 2) 0;
+
+    @media (min-width: v.$bigger-mobile) {
+      flex-direction: row;
+    }
   }
 
   .footer__bottom {
