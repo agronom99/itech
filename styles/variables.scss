@@ -1,14 +1,29 @@
 //breakpoints:
     $bigger-mobile: 576px;
     $tablet: 768px;
+    $bigger-tablet: 992px;
     $desktop: 1200px;
     $bigger-desktop: 1400px;
 
 
-:root{
-    //font
-    --smaller-font: 700 12px 'inter',sans-serif;
+:root {
+  // font
+  --smallest-font: 400 10px "Inter", sans-serif;
+  --smaller-font: 700 11px "Inter", sans-serif;
+  --font: 400 13px "Inter", sans-serif;
+  --biggest-font: 700 24px "Inter", sans-serif;
+
+  // spacers
+  --gap: 15px;
+
+  --transition: 0.3s;
+
+  @media (min-width: $bigger-tablet) {
     --gap: 20px;
 
-    --transition: 0.3s;
+    --smallest-font: 400 11px "Inter", sans-serif;
+    --smaller-font: 700 12px "Inter", sans-serif;
+    --font: 400 15px "Inter", sans-serif;
+    --biggest-font: 700 52px "Inter", sans-serif;
+  }
 }
