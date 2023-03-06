@@ -86,9 +86,9 @@ footer {
     white-space: nowrap;
   }
 
-  .footer__language {
-    width: 208px;
-  }
+  // .footer__language {
+  //   width: 208px;
+  // }
 
   .footer__buttons {
     display: flex;
@@ -102,8 +102,8 @@ footer {
   }
 
   .footer__bottom {
-    height: 100px;
-    display: flex;
+    height: 150px;
+    display: inline-flex;
     align-items: center;
     a {
       text-decoration: underline;

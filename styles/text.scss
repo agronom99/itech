@@ -15,4 +15,20 @@
       #a44cee 73%,
       #ff847f 100%
     );
-    }}
+    }
+
+    &_purple {
+    color: #b5a6f5;
+  }
+
+  &_emoji {
+    font-size: 20px;
+  }
+
+  &_with-bg {
+    background-color: #f7f4ff;
+    color: var(--violett-color);
+    font-size: 12px;
+    padding: 5px 10px;
+  }
+  }

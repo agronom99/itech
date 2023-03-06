@@ -5,11 +5,23 @@
 
   &:hover,
   &:active,
-  &:focus {
+  &:focus,
+  &_active {
     color: var(--violet-color);
+  }
+
+  &_small {
+    font: var(--smallest-font);
+    text-decoration: underline;
+    color: var(--white-color);
+    white-space: nowrap;
+
+    &:hover,
+    &:active,
+    &:focus,
+    &_active {
+      color: var(--blue-color);
+    }
   }
 }
 
-.link_active {
-  color: var(--violet-color);
-}
