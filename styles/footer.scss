@@ -1,35 +1,9 @@
 @use "variables" as v;
-footer {
 
+footer {
   position: relative;
   margin-top: 169px;
   background-color: var(--creame-color);
-
-  .footer__wave {
-    position: absolute;
-    top: -169px;
-    left: -3px;
-    right: 0;
-    width: 100%;
-    height: 269px;
-    background-image: url("assets/images/footer_wave.png");
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-    z-index: -1;
-
-    animation: wave 2s ease-in-out infinite alternate both;
-
-    @keyframes wave {
-      0% {
-        transform: rotate(1deg);
-      }
-
-      100% {
-        transform: rotate(-1deg);
-      }
-    }
-  }
 
   .footer__container {
     gap: calc(var(--gap) * 2);
@@ -82,14 +56,6 @@ footer {
     }
   }
 
-  .footer__button {
-    white-space: nowrap;
-  }
-
-  // .footer__language {
-  //   width: 208px;
-  // }
-
   .footer__buttons {
     display: flex;
     flex-direction: column;
@@ -101,12 +67,38 @@ footer {
     }
   }
 
+  .footer__button {
+    white-space: nowrap;
+  }
+
   .footer__bottom {
-    height: 150px;
-    display: inline-flex;
-    align-items: center;
     a {
       text-decoration: underline;
+    }
+  }
+}
+
+.footer__wave {
+  position: absolute;
+  top: -169px;
+  left: -3px;
+  right: -3px;
+  height: 269px;
+  background-image: url("assets/images/footer_wave.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  z-index: -1;
+
+  animation: wave 2s ease-in-out infinite alternate both;
+
+  @keyframes wave {
+    0% {
+      transform: rotate(1deg) scaleX(-1);
+    }
+
+    100% {
+      transform: rotate(-1deg) scaleX(-1);
     }
   }
 }
