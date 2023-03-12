@@ -1,9 +1,27 @@
-.text{
-    &_biggest{
-        font: var(--biggest-font);
-    }
+.text {
+  font: var(--font);
 
-    &_gradient {
+  &_bold {
+    font-weight: 700;
+  }
+
+  &_biggest {
+    font: var(--biggest-font);
+  }
+
+  &_smallest {
+    font: var(--smallest-font);
+  }
+
+  &_smaller {
+    font: var(--smaller-font);
+  }
+
+  &_bigger {
+    font: var(--bigger-font);
+  }
+
+  &_gradient {
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -15,10 +33,14 @@
       #a44cee 73%,
       #ff847f 100%
     );
-    }
+  }
 
-    &_purple {
+  &_purple {
     color: #b5a6f5;
+  }
+
+  &_violett {
+    color: var(--violett-color);
   }
 
   &_emoji {
@@ -30,5 +52,10 @@
     color: var(--violett-color);
     font-size: 12px;
     padding: 5px 10px;
+    border-radius: 3px;
+
+    &_white {
+      background-color: var(--white-color);
+    }
   }
-  }
+}
