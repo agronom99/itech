@@ -1,0 +1,1074 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  
+  <!-- Fav-Icons -->
+  <link rel="apple-touch-icon" sizes="180x180" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAALQAAAC0BAMAAADP4xsBAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAElBMVEUAAACicoiZco3/ekEAZv////9lLmtaAAAAA3RSTlMA+fJsuw0aAAAAAWJLR0QF+G/pxwAAAAlwSFlzAAAOwwAADsMBx2+oZAAAAAd0SU1FB+cDAxIwDSzVafQAAAEhSURBVGje7dDLDcJAEARRSxAAIRACEglwIP+YiABvVfPxYnru89SqZfn2Ha7gLp+CExrCAU1hT3NZ0jiGppWsaCcr2smGlrKgZQ5Ba5nTWsa0H41pL1M6GE3pQIZ0MhrSiczoaDSjI3lrOuuB6EzemA57EDqUt6XTHtvSqbxXOk69VzqWd0rnqUtPROdy6dKlS5d+J316iV4ddryvXunSpUuXLl26dOnSpUuXLl26dOnSpUvn9PkVev0G36VLly5d+vfpW+k90Etplfrv6JH8b/Qw9ZT0UJ6RHveI6bE8IQ16pDSQ56NJj5Amckaj0RmN5IhmoyOayQkNRyc0lAOajvY0lj2NZU1z2dI8h6WN7GglK1rBipYyp10MQXsY0k/gBwjUNzPGOi8cAAAAJXRFWHRkYXRlOmNyZWF0ZQAyMDIzLTAzLTAzVDE4OjQ4OjEzKzAwOjAwJjrihwAAACV0RVh0ZGF0ZTptb2RpZnkAMjAyMy0wMy0wM1QxODo0ODoxMyswMDowMFdnWjsAAABXelRYdFJhdyBwcm9maWxlIHR5cGUgaXB0YwAAeJzj8gwIcVYoKMpPy8xJ5VIAAyMLLmMLEyMTS5MUAxMgRIA0w2QDI7NUIMvY1MjEzMQcxAfLgEigSi4A6hcRdPJCNZUAAAAASUVORK5CYII=" />
+  <link rel="icon" type="image/png" sizes="32x32" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAMAAABEpIrGAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAA7VBMVEUAAAD/ekEAZv8AAP//ekH/ekH/ekH/ekH/ekH/ekH/ekH/ekH/ekH/ekH/ekH/ekH/ekH/ekH/ekH/ekH/ekH/ekH/ekH/ekH/ekH/ekH/ekH/ekH/ekH/ekH/ekH/ekH/ekH6ekV7cKMAZf8AZv//ekH/ekH/ekH/ezV8cKMDZv0AZv8AZv8AZv8AZv//ekH+ekLseU8AZv//ekH/ezylc4QGZvsAZv8AZv8AZv8AZv8AZv8AZv8AZv8AZv8AZv8AZv8AZv8AZv8AZv8AZv8AZv8AZv8AZv8AZv8AZv8AZv8AZv//ekEAZv////9ILVrOAAAATHRSTlMAAAAAAiFqrdrf3tMwFHvY+/I3Jrn9H78GlUbumNvzy8jBVjU3GQwNDBjB9fINyP7HDQFaWWqhpaSp7P7ip/RUqtYv1Dztnyj8lj8JzWGUEgAAAAFiS0dEThlhcd8AAAAJcEhZcwAADsMAAA7DAcdvqGQAAAAHdElNRQfnAwMSMA613DhOAAAAtUlEQVQ4y+XM1RLCMBRF0aS4u0txbXH34nL5/99hkEBgmFze2a9nzSGEEKo3GE1mi5VlsdkpeUWpw+lyA5/HS/nd5w8ACEAwBCAC4QiIQTSGgDggIIEBNwbgd5CUU4/SmWyOxQE5XyjeKpUrVYXFgVTxcSyptfOzfwF1FjSautatd9Bmdbq9/r3BcMSBZ1JOOX8JA2MMTDAwRcBsjoCFKgbaUhKC1VoSgc12x+8fYK8djqfrfAEYfr2GedkSmQAAACV0RVh0ZGF0ZTpjcmVhdGUAMjAyMy0wMy0wM1QxODo0ODoxNCswMDowMOOd3AkAAAAldEVYdGRhdGU6bW9kaWZ5ADIwMjMtMDMtMDNUMTg6NDg6MTQrMDA6MDCSwGS1AAAAV3pUWHRSYXcgcHJvZmlsZSB0eXBlIGlwdGMAAHic4/IMCHFWKCjKT8vMSeVSAAMjCy5jCxMjE0uTFAMTIESANMNkAyOzVCDL2NTIxMzEHMQHy4BIoEouAOoXEXTyQjWVAAAAAElFTkSuQmCC" />
+  <link rel="icon" type="image/png" sizes="16x16" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAMAAAAoLQ9TAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAllBMVEX/ekEAAAD/ekD+ekIAZv8AUf//ekH/ekH/ekH/ekH/ekH/ekH/ekH/ekH/ekH/ekH/ekH/ekH/ekH/ekH/ekH/ekH/ekH/ekH/ej1+cKEAZv8AZv//ekH/ekCTcZIAZf8AZv8AZv8AZv//ekH/ej8BZv8AZv8AZv8AZv8AZv8AZv8AZv8AZv8AZv8AZv//ekEAZv////+8BwBXAAAAL3RSTlMAAAAAAAAQb8vu8PSJEpv6kYL73/2sa25tfZFupaV6WVpYoQEBkf7k/Y2qGd6EF1Z7U0kAAAABYktHRDHZ2x1yAAAACXBIWXMAAA7DAAAOwwHHb6hkAAAAB3RJTUUH5wMDEjAOtdw4TgAAAHdJREFUGNNjYGBj5+DkAgJuHgYGRkZGBl4+fn0IEIAICArpowoI66MJiCAEmJhBAmC2qJi4uISkFAhABMSBilmkDUCAHAEZIJCVk1dQUFSCCCgrK6uwqhqoAQGIrwZyCwuLlAEMqKMJaGiiCmhoaSMLqOno6rEAAJZeHcQlT3mJAAAAJXRFWHRkYXRlOmNyZWF0ZQAyMDIzLTAzLTAzVDE4OjQ4OjE0KzAwOjAw453cCQAAACV0RVh0ZGF0ZTptb2RpZnkAMjAyMy0wMy0wM1QxODo0ODoxNCswMDowMJLAZLUAAABXelRYdFJhdyBwcm9maWxlIHR5cGUgaXB0YwAAeJzj8gwIcVYoKMpPy8xJ5VIAAyMLLmMLEyMTS5MUAxMgRIA0w2QDI7NUIMvY1MjEzMQcxAfLgEigSi4A6hcRdPJCNZUAAAAASUVORK5CYII=" />
+  <link rel="manifest" href="data:application/manifest+json;base64,ew0KICAgICJuYW1lIjogIiIsDQogICAgInNob3J0X25hbWUiOiAiIiwNCiAgICAiaWNvbnMiOiBbDQogICAgICAgIHsNCiAgICAgICAgICAgICJzcmMiOiAiL2FuZHJvaWQtY2hyb21lLTE0NHgxNDQucG5nIiwNCiAgICAgICAgICAgICJzaXplcyI6ICIxNDR4MTQ0IiwNCiAgICAgICAgICAgICJ0eXBlIjogImltYWdlL3BuZyINCiAgICAgICAgfQ0KICAgIF0sDQogICAgInRoZW1lX2NvbG9yIjogIiNmZmZmZmYiLA0KICAgICJiYWNrZ3JvdW5kX2NvbG9yIjogIiNmZmZmZmYiLA0KICAgICJkaXNwbGF5IjogInN0YW5kYWxvbmUiDQp9" />
+  <link rel="mask-icon" href="/assets/safari-pinned-tab-9716de44.svg" color="#5bbad5" />
+  <meta name="msapplication-TileColor" content="#da532c" />
+  <meta name="theme-color" content="#ffffff" />
+  <title>Itech</title>
+  <script defer src="./script.js"></script>
+  <link rel="stylesheet" href="/assets/index-196c82a8.css">
+</head>
+
+<body>
+  <div class="top-banner">
+    <div class="container top-banner__container">
+      <a class="button_white" href="pages/contact/index.html">Special</a>
+      <span class="top-banner__text">
+        <span class="text_emoji">&#128525;</span>
+        <span class="text_purple"> Get </span>
+        20% Discount
+        <span class="text_purple">for New Account</span>
+      </span>
+      <a class="link_small" href="pages/contact/index.html">Register Now</a>
+    </div>
+  </div>
+  <!-- TODO: add header_fixed class with js when scrolling past some height -->
+  <header>
+    <div class="container header__container">
+      <div class="header__triggers">
+        <a href="#">
+          <img class="logo" src="/assets/logo-5459de93.png" alt="logo" />
+        </a>
+        <button class="header__mobile-trigger">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-list"
+            viewBox="0 0 16 16">
+            <path fill-rule="evenodd"
+              d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z" />
+          </svg>
+        </button>
+      </div>
+      <div class="header__menu">
+        <nav class="navigation header__navigation">
+          <ul>
+            <li>
+              <a class="link" href="pages/about/index.html">About</a>
+            </li>
+            <li>
+              <a class="link" href="pages/product/index.html">Product</a>
+            </li>
+            <li>
+              <a class="link" href="pages/service/index.html">Service</a>
+            </li>
+            <li>
+              <a class="link" href="pages/shop/index.html">Shop</a>
+            </li>
+            <li>
+              <a class="link" href="pages/project/index.html">Project&nbsp;&nbsp;
+                <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" fill="currentColor"
+                  class="bi bi-chevron-down header__svg_tablet" viewBox="0 0 16 16">
+                  <path fill-rule="evenodd"
+                    d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z" />
+                </svg>
+              </a>
+            </li>
+            <li class="header__link_tablet header__link_tablet_one">
+              <a class="link" href="pages/post/index.html">Post</a>
+            </li>
+            <li class="header__link_tablet header__link_tablet_two">
+              <a class="link" href="pages/portfolio/index.html">Portfolio</a>
+            </li>
+            <li class="header__link_tablet header__link_tablet_three">
+              <a class="link" href="pages/blog/index.html">Blog</a>
+            </li>
+            <li class="header__link_tablet header__link_tablet_four">
+              <a class="link" href="pages/contact/index.html">Contact</a>
+            </li>
+          </ul>
+        </nav>
+        <div class="header__buttons">
+          <button class="button button_round">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person"
+              viewBox="0 0 16 16">
+              <path
+                d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6Zm2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0Zm4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4Zm-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664h10Z" />
+            </svg>
+          </button>
+          <button class="header__lang">
+            <img src="/assets/english-0f8bbccb.png" alt="English language" />
+            English&nbsp;
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+              class="bi bi-arrow-down-short" viewBox="0 0 16 16">
+              <path fill-rule="evenodd"
+                d="M8 4a.5.5 0 0 1 .5.5v5.793l2.146-2.147a.5.5 0 0 1 .708.708l-3 3a.5.5 0 0 1-.708 0l-3-3a.5.5 0 1 1 .708-.708L7.5 10.293V4.5A.5.5 0 0 1 8 4z" />
+            </svg>
+          </button>
+          <div class="header__langs">
+            <a href="./index.html">English</a>
+            <a href="./index_UA.html">Ukrainian</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+  <main>
+    <section class="one-app">
+      <div class="one-app__animation"></div>
+      <div class="container one-app__container">
+        <div class="one-app__left">
+          <p class="text_with-bg">Notero - Easy Notes App</p>
+          <p class="text_biggest">
+            Note <span class="text_gradient">Your Everything</span> In One App
+          </p>
+          <p>
+            No coding required to make customizations. The live customizer
+            <br />
+            has everything you need.
+          </p>
+          <div class="one-app__buttons">
+            <a href="https://www.apple.com/app-store/" target="_blank" class="button button_bigger button_active">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-apple"
+                viewBox="0 0 16 16">
+                <path
+                  d="M11.182.008C11.148-.03 9.923.023 8.857 1.18c-1.066 1.156-.902 2.482-.878 2.516.024.034 1.52.087 2.475-1.258.955-1.345.762-2.391.728-2.43Zm3.314 11.733c-.048-.096-2.325-1.234-2.113-3.422.212-2.189 1.675-2.789 1.698-2.854.023-.065-.597-.79-1.254-1.157a3.692 3.692 0 0 0-1.563-.434c-.108-.003-.483-.095-1.254.116-.508.139-1.653.589-1.968.607-.316.018-1.256-.522-2.267-.665-.647-.125-1.333.131-1.824.328-.49.196-1.422.754-2.074 2.237-.652 1.482-.311 3.83-.067 4.56.244.729.625 1.924 1.273 2.796.576.984 1.34 1.667 1.659 1.899.319.232 1.219.386 1.843.067.502-.308 1.408-.485 1.766-.472.357.013 1.061.154 1.782.539.571.197 1.111.115 1.652-.105.541-.221 1.324-1.059 2.238-2.758.347-.79.505-1.217.473-1.282Z" />
+                <path
+                  d="M11.182.008C11.148-.03 9.923.023 8.857 1.18c-1.066 1.156-.902 2.482-.878 2.516.024.034 1.52.087 2.475-1.258.955-1.345.762-2.391.728-2.43Zm3.314 11.733c-.048-.096-2.325-1.234-2.113-3.422.212-2.189 1.675-2.789 1.698-2.854.023-.065-.597-.79-1.254-1.157a3.692 3.692 0 0 0-1.563-.434c-.108-.003-.483-.095-1.254.116-.508.139-1.653.589-1.968.607-.316.018-1.256-.522-2.267-.665-.647-.125-1.333.131-1.824.328-.49.196-1.422.754-2.074 2.237-.652 1.482-.311 3.83-.067 4.56.244.729.625 1.924 1.273 2.796.576.984 1.34 1.667 1.659 1.899.319.232 1.219.386 1.843.067.502-.308 1.408-.485 1.766-.472.357.013 1.061.154 1.782.539.571.197 1.111.115 1.652-.105.541-.221 1.324-1.059 2.238-2.758.347-.79.505-1.217.473-1.282Z" />
+              </svg>
+              &nbsp;&nbsp;|&nbsp;&nbsp;Download App
+            </a>
+            <a href="#" class="link button button_round one-app__play">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-play-fill"
+                viewBox="0 0 16 16">
+                <path
+                  d="m11.596 8.697-6.363 3.692c-.54.313-1.233-.066-1.233-.697V4.308c0-.63.692-1.01 1.233-.696l6.363 3.692a.802.802 0 0 1 0 1.393z" />
+              </svg>
+              <span>View Promotion</span>
+            </a>
+          </div>
+          <div class="one-app__infos">
+            <div class="one-app__info">
+              <div>
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-fire"
+                  viewBox="0 0 16 16">
+                  <path
+                    d="M8 16c3.314 0 6-2 6-5.5 0-1.5-.5-4-2.5-6 .25 1.5-1.25 2-1.25 2C11 4 9 .5 6 0c.357 2 .5 4-2 6-1.25 1-2 2.729-2 4.5C2 14 4.686 16 8 16Zm0-1c-1.657 0-3-1-3-2.75 0-.75.25-2 1.25-3C6.125 10 7 10.5 7 10.5c-.375-1.25.5-3.25 2-3.5-.179 1-.25 2 1 3 .625.5 1 1.364 1 2.25C11 14 9.657 15 8 15Z" />
+                </svg>
+              </div>
+              <span>Free 14 days trial</span>
+            </div>
+            <div class="one-app__info">
+              <div>
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                  class="bi bi-credit-card-2-back-fill" viewBox="0 0 16 16">
+                  <path
+                    d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v5H0V4zm11.5 1a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h2a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5h-2zM0 11v1a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-1H0z" />
+                </svg>
+              </div>
+              <span>One time payment</span>
+            </div>
+          </div>
+        </div>
+        <div class="one-app__right"></div>
+      </div>
+    </section>
+    <section class="partners">
+      <div class="footer__wave partners__wave"></div>
+      <div class="container partners__container">
+        <div class="partners__heading text_bigger">
+          <span class="text_violett">25K+ Installation</span> and Featured on
+        </div>
+        <ul class="partners__links">
+          <li>
+            <a class="partners__link" target="_blank" href="#"><img src="data:image/png;base64,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"
+                alt="Partner 1" /></a>
+          </li>
+          <li>
+            <a class="partners__link" target="_blank" href="#"><img src="data:image/png;base64,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"
+                alt="Partner 2" /></a>
+          </li>
+          <li>
+            <a class="partners__link" target="_blank" href="#"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEsAAAAXCAYAAABDArJmAAACrUlEQVRYheVYsW7bMBA9p106qmNHAZ06smNHd8mujB3tsehkjR3lT4jHZLM+IVq7RZ/gAp2yRZ+QgsG74vVAkVKd2nLyAMEWdeSJj3ePJ87O5ZecOHIR+XmIKZydGE9zEbkVkQe68kM5PzWyGhFZHsv5GVZmJSI7s2I3aM9Ne4X2e2rboe3S2GYBnyl/Fe63IrII9O8OwEsQrFlKguIzVjLHxDq0tXi+oxRo8MzDIVU8ZhHfff6ESBP4+0h2+j6hfv8VnIZ9K6biWRJRMbSwTUVA7DlP3hlSj4ahmuUnVo94yc2e6WL7HkzEYxhKll/pMZPvBkbhUIwZSzXxARqqGrjqIb2AXu5IS7fYeeekw9XrAc4zRMpYjIlEC0f3zQj/DhPXd9adMwNpVUQbvXSsITtbkLihhVoMiazuHwV0H7JUo9a0cQzBlnZgJpj/sw1roZLCBW6Befj5l1OqswoqSTqs9JiILkyatea/ykiG9Mp6ShuWG7XxC7aZElk1IuktiFL9uDVp2Qe2CX3+MAkO9yG73PT5YzPVCl7LDyEdSu2IoShJ2fLXgDO/HhfcacqfO6x5GQnxU6JB4Vzia0E1rESE/6XVQ3bDY8GWKqlUHFvaMOaQgKhGTjmybFqlai1+HkrZrMf2EmQla7kpR9bc3KfKlxpirEQ5IsARWbYUUj83iC6LRsdhssYIpLUfslvF+ofANVAsRXicJdVRCxJwJv7CpCGXFH26+Fiwvnov33IM/FVE3pDBO1w/qM2T8gW2TJDv9wGrepfQj5S/TyJyhfFKXNc06cqkmf5vEVk13mGF8X2f7xhnGUi3FmPEdls/1/VzOFbeBwsQETolKRClitmpnZQ+JfSwsu+QoKYofJSAl0yWoi/9HK5GC+SXnoY+ulR7benh9U81UEREfgPmC7tWp1W3OgAAAABJRU5ErkJggg=="
+                alt="Partner 3" /></a>
+          </li>
+          <li>
+            <a class="partners__link" target="_blank" href="#"><img src="data:image/png;base64,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"
+                alt="Partner 4" /></a>
+          </li>
+          <li>
+            <a class="partners__link" target="_blank" href="#"><img src="data:image/png;base64,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"
+                alt="Partner 5" /></a>
+          </li>
+          <li>
+            <a class="partners__link" target="_blank" href="#"><img src="data:image/png;base64,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"
+                alt="Partner 6" /></a>
+          </li>
+        </ul>
+      </div>
+    </section>
+    <section class="features">
+      <div class="features__circle"></div>
+      <div class="container features__container">
+        <p class="text_with-bg text_with-bg_white">Notero - Easy Notes App</p>
+        <p class="text_biggest">
+          Awesome <span class="text_gradient">Features</span>
+        </p>
+        <ul class="features__items">
+          <li class="features__item">
+            <img src="/assets/features-1-1daa7da1.png" alt="Features-1" />
+            <p class="text_bold">Notes Powerful and Security</p>
+          </li>
+          <li class="features__item">
+            <img src="/assets/features-2-fbd2c544.png" alt="Features-2" />
+            <p class="text_bold">Easy Sort, Classify and Search</p>
+          </li>
+          <li class="features__item">
+            <img src="/assets/features-3-019469be.png" alt="Features-3" />
+            <p class="text_bold">Collaboration and Share</p>
+          </li>
+          <li class="features__item">
+            <img src="/assets/features-4-fef79598.png" alt="Features-4" />
+            <p class="text_bold">Quick Note In Everywhere</p>
+          </li>
+          <li class="features__item">
+            <img src="/assets/features-5-826dd5d0.png" alt="Features-5" />
+            <p class="text_bold">Write and Draw on Ipad</p>
+          </li>
+        </ul>
+      </div>
+      <div class="features__wave"></div>
+    </section>
+    <section class="notero">
+      <div class="container notero__container">
+        <div class="notero__left">
+          <div class="notero__animation"></div>
+        </div>
+        <div class="notero__right">
+          <p class="text_with-bg">Notero - Easy Notes App</p>
+          <p class="text_biggest">
+            The Notero For <span class="text_gradient">Creatives</span>
+          </p>
+          <p class="notero__description">
+            Stay focused and productive with a clean and clutter-free note
+            <br />
+            space. The flexible ways to organize your notes: hashtags, nested
+            <br />
+            notebooks, pinning notes to the top of the note list, etc
+          </p>
+          <div class="notero__benefits">
+            <div class="notero__benefit">
+              <div>
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                  class="bi bi-journal-bookmark-fill" viewBox="0 0 16 16">
+                  <path fill-rule="evenodd" d="M6 1h6v7a.5.5 0 0 1-.757.429L9 7.083 6.757 8.43A.5.5 0 0 1 6 8V1z" />
+                  <path
+                    d="M3 0h10a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2v-1h1v1a1 1 0 0 0 1 1h10a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H3a1 1 0 0 0-1 1v1H1V2a2 2 0 0 1 2-2z" />
+                  <path
+                    d="M1 5v-.5a.5.5 0 0 1 1 0V5h.5a.5.5 0 0 1 0 1h-2a.5.5 0 0 1 0-1H1zm0 3v-.5a.5.5 0 0 1 1 0V8h.5a.5.5 0 0 1 0 1h-2a.5.5 0 0 1 0-1H1zm0 3v-.5a.5.5 0 0 1 1 0v.5h.5a.5.5 0 0 1 0 1h-2a.5.5 0 0 1 0-1H1z" />
+                </svg>
+              </div>
+              <p class="text_bold">Filtering notes using matched keywords</p>
+            </div>
+            <div class="notero__benefit">
+              <div>
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-fire"
+                  viewBox="0 0 16 16">
+                  <path
+                    d="M8 16c3.314 0 6-2 6-5.5 0-1.5-.5-4-2.5-6 .25 1.5-1.25 2-1.25 2C11 4 9 .5 6 0c.357 2 .5 4-2 6-1.25 1-2 2.729-2 4.5C2 14 4.686 16 8 16Zm0-1c-1.657 0-3-1-3-2.75 0-.75.25-2 1.25-3C6.125 10 7 10.5 7 10.5c-.375-1.25.5-3.25 2-3.5-.179 1-.25 2 1 3 .625.5 1 1.364 1 2.25C11 14 9.657 15 8 15Z" />
+                </svg>
+              </div>
+              <p class="text_bold">Automatically sync in real time</p>
+            </div>
+            <div class="notero__benefit">
+              <div>
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-option"
+                  viewBox="0 0 16 16">
+                  <path
+                    d="M1 2.5a.5.5 0 0 1 .5-.5h3.797a.5.5 0 0 1 .439.26L11 13h3.5a.5.5 0 0 1 0 1h-3.797a.5.5 0 0 1-.439-.26L5 3H1.5a.5.5 0 0 1-.5-.5zm10 0a.5.5 0 0 1 .5-.5h3a.5.5 0 0 1 0 1h-3a.5.5 0 0 1-.5-.5z" />
+                </svg>
+              </div>
+              <p class="text_bold">
+                Complete note editor with rich text options
+              </p>
+            </div>
+          </div>
+          <a class="button button_active" href="#">Free Registar</a>
+        </div>
+      </div>
+    </section>
+    <section class="security">
+      <div class="notero__animation"></div>
+      <div class="container security__container">
+        <div class="security__left">
+          <p class="text_with-bg">Better Note Management</p>
+          <p class="text_biggest">
+            Your Notes <span class="text_gradient">Security</span>
+          </p>
+          <p class="security__description">
+            Automatically syncs across all your devices. You can also access
+            and write notes without internet connection.
+          </p>
+          <div>
+            <button class="button-dropdown">
+              <div class="button-dropdown__top">
+                <p class="text text_bold">
+                  Create And Save Your Notes With Multi-Media
+                </p>
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                  class="bi bi-chevron-down header__svg_tablet" viewBox="0 0 16 16">
+                  <path fill-rule="evenodd"
+                    d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z" />
+                </svg>
+              </div>
+              <p class="button-dropdown__bottom">
+                Images, videos, PDFs and audio files are supported. Create
+                math expressions and diagrams directly from the app. Take
+                photos with the mobile app and save them to a note.
+              </p>
+            </button>
+            <button class="button-dropdown">
+              <div class="button-dropdown__top">
+                <p class="text text_bold">Web Clipper Extension</p>
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                  class="bi bi-chevron-down header__svg_tablet" viewBox="0 0 16 16">
+                  <path fill-rule="evenodd"
+                    d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z" />
+                </svg>
+              </div>
+              <p class="button-dropdown__bottom">
+                Images, videos, PDFs and audio files are supported. Create
+                math expressions and diagrams directly from the app. Take
+                photos with the mobile app and save them to a note.
+              </p>
+            </button>
+            <button class="button-dropdown">
+              <div class="button-dropdown__top">
+                <p class="text text_bold">Protect Your Note With Lock</p>
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                  class="bi bi-chevron-down header__svg_tablet" viewBox="0 0 16 16">
+                  <path fill-rule="evenodd"
+                    d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z" />
+                </svg>
+              </div>
+              <p class="button-dropdown__bottom">
+                Images, videos, PDFs and audio files are supported. Create
+                math expressions and diagrams directly from the app. Take
+                photos with the mobile app and save them to a note.
+              </p>
+            </button>
+          </div>
+          <a class="button-svg" href="https://chrome.google.com/webstore/category/extensions" target="_blank">
+            <div class="button-svg__left">
+              <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABwAAAAcCAYAAAByDd+UAAAFW0lEQVRIiaWWaWxUVRSAv/uW6Uw7006hpYW22oUikRprNcoi1KCoNLJIwg9JENAEJcZEI8TGRIn+MQTX8ANMNNSFiBI2FYlRogVNgB9SBAsUgaEUutGWLtOZdt5719zplLSdGSzxvNzk3eWd791zzzn3iEvFdzEOKQOqgNnANCAbSAH6gGagHjgM/BDrJ5X/As4HNgBPjuevgAHgK2ATcD7RAi3Jhy5gO3DoNmDEdv08cA6oHi+wEDgNrL4N0FgRwLvA3jigJkE1MdTPB04Apf8DNlKWArUjB0S/vwTDkYRNIdr9RkDAHULeQoWUSMsCxwFdRxjGeMA7gWfUi87a6eyu9CM1UfPAuVBlT5pOHFDXwbaJXG7E6WoHZ2iBc6Mbq70ZGYqA5kcOiGStTA6KBieonRZT9y/khlcvz2+PnNj15mWmdERoyTSiZo6awDSxrl7F6evDu3gR2csWYcy8D9J90NJG6LejdOzZjRX4HeHLR+hpIJ0RNlRWEcowIT3d9ovKTx9Dd+SvDQXuR1b83MWmrc1cznWpNVFY5MIF9Kws8rZtwbVkSVTHJaB7EHJdkBvT65zfiN3yDugCjDRFGXEMQ03zOtUKeCcQGDQFHRkGn2xuYl5dkECeG3mtGeFOoejYH4jiYnbUtfP+7lOcuNoDERuX22ROcSYbV8+kcrIJzhfI86vApYFmxp+kxTW9cHHxC8AClyXp8um0ZRpUHe3Ftm3Cnc0UHDyAUV7Ohn1nWb/pMC3dA5DmAreBbUsCDdepOXCGwpJJlOfPAasDp/kYUprIAW30mUZEmorDuQpua4L8tgi15V72VGaQ23KJ9GXLSZk3j731nby39Tjkp+OZ4sPt0nHrGm63gafQD14XazbXUt8GIvdjcHvBCify1qAWy41RUY6SEbSpeSKTRhxyFj0dHa/eeRK8KXg8JtIZ7cLSlngmeiA4yNvfnYrmEn3CUogkjg8tloiHDl7ApK4I9XkaO54qRkyfQQBoaOqGiZ442EgoE1I50tCMpQYyHyJZKGux/DfCoQQ51wfZvzAH7s/G7iXqIFHvu5WYGr1hi6ghzfRY5orHKmD/KKAA36CgXfTTovVQpH7HbUDEuTVwwCLLa5Kq3sOtKu64mTDHAFvGDqp0Fe7tpvbMn2gumFWaBW1BRLJd6hp09FN1b3FUoew8hEhyD6nhvxNNZLoz+PrkULLftqICNEGoIxQHVf3wlW7MAj8bF5cArTidPw3FYrwIFYd+YPHYKV+Kl7qWv5jsy2bBtAqKSrLZdySA1dqHpWlYjsTqG8Rq6sE7ycuht6qYnqXjXFwEwQC4PImApgJeTHhZCoHHdPP92YNMyy5l+T3lrJk/gy7Lotey0TVBYY6XVY+WcvCNuRT5dZyml5Gt34InJeH5qVIkmkuBGmDV2FlDM+jo7+TGwA1eenAt6x9+EUiL09IabiS1cR3enh9xXKZKwgk9VF1Rw8CcRM5D1B90+gf7udLdxNSJJcwrmk1F3t1kuNNo673O9jMXmSU+5/XSRlJ0F440ksGUJUuGgUpeAT5MtFKoRwi6wz10hjqxnSGTNodN8jyCuvln8KXqWAMuRNKQp0JVEyOv64+AylhZMEqkeqSMOpJqQyIJ9qWzpawOX4bE6XUhkpcKr8VKl7giSiXPX5J9NSy6kARCaTye1UZVwWUIqfszKUyVjB8MdxIFy4JYiZhUwo4eTYHVxf+A4WBbSesatbNREZCsLn0OeBZoSrS7S6FUVk5ppCynFdnvJr4I4misSr+5s2G5Vcn1JbALWAesBKaqwR7LoMQT5NWiC2ALHEcbBqpkexz4DPgmoUbgXyyj+w/ZPQAwAAAAAElFTkSuQmCC" alt="chrome icon" />
+            </div>
+            <div class="button-svg__right">
+              <p class="text_smallest">Available in The</p>
+              <p class="text_smaller">Chrome Web Store</p>
+            </div>
+          </a>
+        </div>
+        <div class="security__right"></div>
+      </div>
+    </section>
+    <section class="focus">
+      <div class="container focus__container">
+        <div class="focus__left">
+          <div class="notero__animation"></div>
+        </div>
+        <div class="focus__right">
+          <p class="text_with-bg">Beautiful Themes</p>
+          <p class="text_biggest">
+            Focus More With <br /><span class="text_gradient">Dark Theme</span>
+          </p>
+          <p class="focus__description">
+            Apply Notero’s elegant themes to your taste. Dark themes work
+            excellently for those who prefer distraction-free mode.
+          </p>
+          <div class="focus__benefits">
+            <div class="focus__benefit">
+              <p class="text_bold">Filtering notes using matched keywords</p>
+            </div>
+            <div class="focus__benefit focus__benefit_active">
+              <p class="text_bold">8 Beautiful themes for you select</p>
+            </div>
+            <div class="focus__benefit">
+              <p class="text_bold">Save energy for your device</p>
+            </div>
+            <div class="focus__benefit">
+              <p class="text_bold">
+                Easy to switch between light and dark mode
+              </p>
+            </div>
+          </div>
+          <a class="button button_active" href="#">Discover Now</a>
+        </div>
+      </div>
+    </section>
+    <section class="integration">
+      <div class="container integration__container">
+        <p class="text_with-bg">One-Time Payment</p>
+        <p class="text_biggest">
+          Integration With <br />
+          <span class="text_gradient">Popular Apps</span>
+        </p>
+        <p class="focus__description">
+          Notero integrate with popular appls. Help you easy to connect and
+          collaborate
+        </p>
+        <div class="integration__icons">
+          <div>
+            <img src="/assets/integration-1-74f2e0de.png" alt="integration 1" />
+          </div>
+          <div>
+            <img src="/assets/integration-2-0babc9d0.png" alt="integration 2" />
+          </div>
+          <div>
+            <img src="/assets/integration-3-932bb503.png" alt="integration 3" />
+          </div>
+          <div>
+            <img src="/assets/integration-4-384ae26f.png" alt="integration 4" />
+          </div>
+          <div>
+            <img src="/assets/integration-5-d9c551bc.png" alt="integration 5" />
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="carousel">
+      <div class="features__wave carousel__wave"></div>
+      <div class="carousel__content">
+        <div class="carousel__hand"></div>
+      </div>
+    </section>
+    <section class="testimonials">
+      <div class="testimonials__container container">
+        <div class="testimonials__left">
+          <p class="text_with-bg">Testimonials</p>
+          <p class="text_biggest">
+            Loved From
+            <span class="text_gradient">Customers</span>
+          </p>
+          <p class="focus__description">
+            Notero loved from thoudsands customer worldwide and get trusted
+            from big companies.
+          </p>
+          <div class="testimonials__icons">
+            <div class="testimonials__icons__left">
+              <img src="data:image/png;base64,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" alt="download icon" />
+              <p class="text_bigger text_violett">2,5M+</p>
+              <p class="text_smallest">Downloaded and Installation</p>
+            </div>
+            <div class="testimonials__icons__right">
+              <img src="/assets/testimonials-app-store-c33a3999.png" alt="app-store icon" />
+              <p class="text_bigger text_violett">4.8/5</p>
+              <p class="text_smallest">Based on 1,258 reviews</p>
+              <div class="card__stars">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                  class="bi bi-star-fill" viewBox="0 0 16 16">
+                  <path
+                    d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
+                </svg>
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                  class="bi bi-star-fill" viewBox="0 0 16 16">
+                  <path
+                    d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
+                </svg>
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                  class="bi bi-star-fill" viewBox="0 0 16 16">
+                  <path
+                    d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
+                </svg>
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                  class="bi bi-star-fill" viewBox="0 0 16 16">
+                  <path
+                    d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
+                </svg>
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                  class="bi bi-star-fill" viewBox="0 0 16 16">
+                  <path
+                    d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
+                </svg>
+              </div>
+            </div>
+          </div>
+          <div class="testimonials__buttons">
+            <a href="https://www.apple.com/app-store/" target="_blank" class="button button_bigger button_active">
+              See Reviews On App Store
+            </a>
+            <a href="#" class="link button button_round one-app__play">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-play-fill"
+                viewBox="0 0 16 16">
+                <path
+                  d="m11.596 8.697-6.363 3.692c-.54.313-1.233-.066-1.233-.697V4.308c0-.63.692-1.01 1.233-.696l6.363 3.692a.802.802 0 0 1 0 1.393z" />
+              </svg>
+              <span>View Promotion</span>
+            </a>
+          </div>
+        </div>
+        <div class="testimonials__right">
+          <div class="testimonials__cards">
+            <div class="card">
+              <img class="card__left" src="data:image/png;base64,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" alt="testimonials 1" />
+              <div class="card__right">
+                <div class="card__stars">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                    class="bi bi-star-fill" viewBox="0 0 16 16">
+                    <path
+                      d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
+                  </svg>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                    class="bi bi-star-fill" viewBox="0 0 16 16">
+                    <path
+                      d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
+                  </svg>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                    class="bi bi-star-fill" viewBox="0 0 16 16">
+                    <path
+                      d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
+                  </svg>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                    class="bi bi-star-fill" viewBox="0 0 16 16">
+                    <path
+                      d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
+                  </svg>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                    class="bi bi-star-fill" viewBox="0 0 16 16">
+                    <path
+                      d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
+                  </svg>
+                </div>
+                <p class="text_smaller">
+                  “You can even send emails to Evernote and gather all of the
+                  things you need in a single place.”
+                </p>
+                <p class="text_smallest">
+                  JURGEN K. / Senior Marketing At
+                  <span class="text_purple">Brator</span>
+                </p>
+              </div>
+            </div>
+            <div class="card">
+              <img class="card__left" src="/assets/testimonials-2-69eb6696.png" alt="testimonials 2" />
+              <div class="card__right">
+                <div class="card__stars">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                    class="bi bi-star-fill" viewBox="0 0 16 16">
+                    <path
+                      d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
+                  </svg>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                    class="bi bi-star-fill" viewBox="0 0 16 16">
+                    <path
+                      d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
+                  </svg>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                    class="bi bi-star-fill" viewBox="0 0 16 16">
+                    <path
+                      d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
+                  </svg>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                    class="bi bi-star-fill" viewBox="0 0 16 16">
+                    <path
+                      d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
+                  </svg>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                    class="bi bi-star-fill" viewBox="0 0 16 16">
+                    <path
+                      d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
+                  </svg>
+                </div>
+                <p class="text_smaller">
+                  “Notero - 1st my choice for notes app. Awesome”
+                </p>
+                <p class="text_smallest">
+                  FODEN P. / Director At
+                  <span class="text_purple">Ecoland Resort</span>
+                </p>
+              </div>
+            </div>
+            <div class="card">
+              <img class="card__left" src="data:image/png;base64,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" alt="testimonials 3" />
+              <div class="card__right">
+                <div class="card__stars">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                    class="bi bi-star-fill" viewBox="0 0 16 16">
+                    <path
+                      d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
+                  </svg>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                    class="bi bi-star-fill" viewBox="0 0 16 16">
+                    <path
+                      d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
+                  </svg>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                    class="bi bi-star-fill" viewBox="0 0 16 16">
+                    <path
+                      d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
+                  </svg>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                    class="bi bi-star-fill" viewBox="0 0 16 16">
+                    <path
+                      d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
+                  </svg>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                    class="bi bi-star-fill" viewBox="0 0 16 16">
+                    <path
+                      d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
+                  </svg>
+                </div>
+                <p class="text_smaller">
+                  “.This app is seriously good. It’s simple, clean and a real
+                  joy to use.”
+                </p>
+                <p class="text_smallest">
+                  KERRY T. / Designer At
+                  <span class="text_purple">Teckzone Inc</span>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="pricing">
+      <div class="container pricing__container">
+        <p class="text_with-bg">Pricing Plan</p>
+        <p class="text_biggest">
+          Start With
+          <span class="text_gradient">Affordable Price</span>
+        </p>
+        <p>Billed monthly Billed annually</p>
+        <div class="pricing__box">
+          <div class="pricing__left">
+            <p class="text_smaller pricing__heading">
+              <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB0AAAAVCAYAAAC6wOViAAAFFUlEQVRIiY1WS4hcRRQ9t+q917+ZziQzJkgiaiC40ZVuIoJLEdSFC1EQjeBnJboTXbpIwJ2CiuBCiIKiG8GdrtypWYkI8Q9RRzOmZzLd/erV71659YwaTTTVFK+73+fUuefcU4+OvS24kkEkIAF8YKQosIZQ1RZNLftmm+cOHFwftpuzeOjX7XD/3r2T4+OVyaYlxtbWFsbT/YhskBIDAlRXhPi3oeB1RffC2PuC80fiIh2mwXRts61ybmBHqx5M5i4y9DqBXwP4N4AufsaVMjWmMD0aPF7yiW7xbQf2AdGsIIpBTAxLyp4AJSSMZgBHaf5uMxw/naTeDqFnSsfe+R9QvYgKw3u8w/ttB8yXEdK1wGACHy0qEogI9IP+ueDyVcvPqG3YGQ7Hj2Xm9zgDFef/Z2oI653H+60TRL08BZC1cElAnJDQM1NgFHDSA7KeyzXAac359t3p6vhBY/itKill6hldUkMDpEzPug5IwvAuFxpUW3DrwWL7m1kpMrgA/8FUCIwMIkZMDkyDN6dj+qYKiWAgyubSLAXkPB72KQNG65YLIxcyODNiVl65/5+5TGYpoHpGS2wqC6KM5aKFocHJalpnzGOFoLVWhH+AM9NDPvBGISKC5IPKhph64VQe4QjoTKkACguyCLinA8o1yHAxo3M4Uq0NIqZjYNYaLAL1fWR6B5XSRtyZErQNEFuHFCJoMCiViTkhJQ9SlilCcoBwKgvJBZiKPpSbUjJjM6w18yoyYVgLDkwypg0w6yzaSKgMoSaiyLgtXVh5TLCVgU9AjAKfGJIzKEdICpDkC2vm3EssBqKgkiEGkMzI1vThUIJCgFENHNRyB4Ntb+C83Dhf5oPzFhAScMcgsghiwDmBUyxO5gIay2/OoYD2fjK9EyF/ei1Hc3EiKWtVYTrIGCm4Mw+MhDE2gvOO0RGhlRpzDxADtQiMGidF5BjASVuEcaEN1Tyqo6W+zCIJOcV/x6B2Wch0s7X2pY2pufWq1d7+Ws4uDdB2jK3zEWd3gGXXwEXVNYCy/OFaU/RkVuOolAyySlOdZ1Rz+gtU60FYJ2OPE8zjnAlt7K2vKaK6ptynzsbUYjpqsOwqzJcVZjsWbVuha1vE4JAiF1CNxAqEpLpL3x2c86SqLGE0rLUYT2bGCyHKkFNvHF2HtqfmakgZMeqRkZKUENAUGg8JzcYYLjQI3QoWCwfnOqTosVi2hT1yhlGWGpfMm5XY4QOzBV5JMayNa8LKpIYTgu+4lElBQswFWGfRTN2cBUkXkjKSOoS1jISN/XtQV3uwfX756vL7eCKnsIdErhWWfTBytTB/SDc89vGpX898dY0drT+/fuhGHD44feLwob03NU2N2W6C8xE594Cl9wogI8aEmHMxDUuf8oPGqln8zm57zPn89mJnjhQ8bKX6GjTVAKT78E9fn7pF3FnUtZoCOPXlLy9/e+bcUzdct/HMxr49V6v4XYgljRQsFca56FQiT6ANj6Y26Jz7eLbrHmbBD5U1l99ARpNV1KMpbD0oN66tDuA8v/jpFz9f//npM2+k6DBsLGISdF2CjxHxQmuACrvKCs7vzk+c3V7eroB1fXnAAvqvlhEUkJXJwG/+1j7y+emf7t46N/vMUkSjaUaAmm88tBjWhBD8J1vndo/uLPxzdWVhTL+t/de45OuK3qO5PxlVyvCD737c+WB1Uj+6tjK8w1b2gIj4zuef2zZ85EI+qUCDyl5ud7x4APgdVA+hamkcbr8AAAAASUVORK5CYII=" alt="cap" />
+              BASIC PLAN
+            </p>
+            <p><span class="text_bigger">Free</span> / month</p>
+            <p class="text_smallest">
+              Free 14 days trial, you can use over 20 basic features
+            </p>
+            <div class="notero__benefits pricing__benefits">
+              <div class="notero__benefit">
+                <div>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                    class="bi bi-journal-bookmark-fill" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="M6 1h6v7a.5.5 0 0 1-.757.429L9 7.083 6.757 8.43A.5.5 0 0 1 6 8V1z" />
+                    <path
+                      d="M3 0h10a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2v-1h1v1a1 1 0 0 0 1 1h10a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H3a1 1 0 0 0-1 1v1H1V2a2 2 0 0 1 2-2z" />
+                    <path
+                      d="M1 5v-.5a.5.5 0 0 1 1 0V5h.5a.5.5 0 0 1 0 1h-2a.5.5 0 0 1 0-1H1zm0 3v-.5a.5.5 0 0 1 1 0V8h.5a.5.5 0 0 1 0 1h-2a.5.5 0 0 1 0-1H1zm0 3v-.5a.5.5 0 0 1 1 0v.5h.5a.5.5 0 0 1 0 1h-2a.5.5 0 0 1 0-1H1z" />
+                  </svg>
+                </div>
+                <p class="text_bold">Write 5 Notes On Only iOS & Android</p>
+              </div>
+              <div class="notero__benefit">
+                <div>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-fire"
+                    viewBox="0 0 16 16">
+                    <path
+                      d="M8 16c3.314 0 6-2 6-5.5 0-1.5-.5-4-2.5-6 .25 1.5-1.25 2-1.25 2C11 4 9 .5 6 0c.357 2 .5 4-2 6-1.25 1-2 2.729-2 4.5C2 14 4.686 16 8 16Zm0-1c-1.657 0-3-1-3-2.75 0-.75.25-2 1.25-3C6.125 10 7 10.5 7 10.5c-.375-1.25.5-3.25 2-3.5-.179 1-.25 2 1 3 .625.5 1 1.364 1 2.25C11 14 9.657 15 8 15Z" />
+                  </svg>
+                </div>
+                <p class="text_bold">
+                  Add Attachments, Tables, Codes and More To Your Notes
+                </p>
+              </div>
+              <div class="notero__benefit pricing__disabled">
+                <div>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                    class="bi bi-option" viewBox="0 0 16 16">
+                    <path
+                      d="M1 2.5a.5.5 0 0 1 .5-.5h3.797a.5.5 0 0 1 .439.26L11 13h3.5a.5.5 0 0 1 0 1h-3.797a.5.5 0 0 1-.439-.26L5 3H1.5a.5.5 0 0 1-.5-.5zm10 0a.5.5 0 0 1 .5-.5h3a.5.5 0 0 1 0 1h-3a.5.5 0 0 1-.5-.5z" />
+                  </svg>
+                </div>
+                <p class="text_bold">
+                  Protect Your Notes and Notebooks With Lock
+                </p>
+              </div>
+              <div class="notero__benefit pricing__disabled">
+                <div>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                    class="bi bi-option" viewBox="0 0 16 16">
+                    <path
+                      d="M1 2.5a.5.5 0 0 1 .5-.5h3.797a.5.5 0 0 1 .439.26L11 13h3.5a.5.5 0 0 1 0 1h-3.797a.5.5 0 0 1-.439-.26L5 3H1.5a.5.5 0 0 1-.5-.5zm10 0a.5.5 0 0 1 .5-.5h3a.5.5 0 0 1 0 1h-3a.5.5 0 0 1-.5-.5z" />
+                  </svg>
+                </div>
+                <p class="text_bold">Focus Mode and Dark Theme</p>
+              </div>
+              <div class="notero__benefit pricing__disabled">
+                <div>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                    class="bi bi-option" viewBox="0 0 16 16">
+                    <path
+                      d="M1 2.5a.5.5 0 0 1 .5-.5h3.797a.5.5 0 0 1 .439.26L11 13h3.5a.5.5 0 0 1 0 1h-3.797a.5.5 0 0 1-.439-.26L5 3H1.5a.5.5 0 0 1-.5-.5zm10 0a.5.5 0 0 1 .5-.5h3a.5.5 0 0 1 0 1h-3a.5.5 0 0 1-.5-.5z" />
+                  </svg>
+                </div>
+                <p class="text_bold">
+                  Export to Text, PDF, HTML and Markdown formats
+                </p>
+              </div>
+            </div>
+            <a href="pages/contact/index.html" class="button button_bigger">
+              Register Now
+            </a>
+          </div>
+          <div class="pricing__right">
+            <p class="text_smaller pricing__heading">
+              <img src="data:image/png;base64,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" alt="crown" />
+              PREMIUM PLAN
+            </p>
+            <p><span class="text_bigger">$29</span> / month</p>
+            <p class="text_smallest">
+              Experience all premium features and only one-time payment
+            </p>
+            <div class="notero__benefits pricing__benefits">
+              <div class="notero__benefit">
+                <div>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                    class="bi bi-journal-bookmark-fill" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="M6 1h6v7a.5.5 0 0 1-.757.429L9 7.083 6.757 8.43A.5.5 0 0 1 6 8V1z" />
+                    <path
+                      d="M3 0h10a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2v-1h1v1a1 1 0 0 0 1 1h10a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H3a1 1 0 0 0-1 1v1H1V2a2 2 0 0 1 2-2z" />
+                    <path
+                      d="M1 5v-.5a.5.5 0 0 1 1 0V5h.5a.5.5 0 0 1 0 1h-2a.5.5 0 0 1 0-1H1zm0 3v-.5a.5.5 0 0 1 1 0V8h.5a.5.5 0 0 1 0 1h-2a.5.5 0 0 1 0-1H1zm0 3v-.5a.5.5 0 0 1 1 0v.5h.5a.5.5 0 0 1 0 1h-2a.5.5 0 0 1 0-1H1z" />
+                  </svg>
+                </div>
+                <p class="text_bold">Write 5 Notes On Only iOS & Android</p>
+              </div>
+              <div class="notero__benefit">
+                <div>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-fire"
+                    viewBox="0 0 16 16">
+                    <path
+                      d="M8 16c3.314 0 6-2 6-5.5 0-1.5-.5-4-2.5-6 .25 1.5-1.25 2-1.25 2C11 4 9 .5 6 0c.357 2 .5 4-2 6-1.25 1-2 2.729-2 4.5C2 14 4.686 16 8 16Zm0-1c-1.657 0-3-1-3-2.75 0-.75.25-2 1.25-3C6.125 10 7 10.5 7 10.5c-.375-1.25.5-3.25 2-3.5-.179 1-.25 2 1 3 .625.5 1 1.364 1 2.25C11 14 9.657 15 8 15Z" />
+                  </svg>
+                </div>
+                <p class="text_bold">
+                  Add Attachments, Tables, Codes and More To Your Notes
+                </p>
+              </div>
+              <div class="notero__benefit">
+                <div>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                    class="bi bi-option" viewBox="0 0 16 16">
+                    <path
+                      d="M1 2.5a.5.5 0 0 1 .5-.5h3.797a.5.5 0 0 1 .439.26L11 13h3.5a.5.5 0 0 1 0 1h-3.797a.5.5 0 0 1-.439-.26L5 3H1.5a.5.5 0 0 1-.5-.5zm10 0a.5.5 0 0 1 .5-.5h3a.5.5 0 0 1 0 1h-3a.5.5 0 0 1-.5-.5z" />
+                  </svg>
+                </div>
+                <p class="text_bold">
+                  Protect Your Notes and Notebooks With Lock
+                </p>
+              </div>
+              <div class="notero__benefit">
+                <div>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                    class="bi bi-option" viewBox="0 0 16 16">
+                    <path
+                      d="M1 2.5a.5.5 0 0 1 .5-.5h3.797a.5.5 0 0 1 .439.26L11 13h3.5a.5.5 0 0 1 0 1h-3.797a.5.5 0 0 1-.439-.26L5 3H1.5a.5.5 0 0 1-.5-.5zm10 0a.5.5 0 0 1 .5-.5h3a.5.5 0 0 1 0 1h-3a.5.5 0 0 1-.5-.5z" />
+                  </svg>
+                </div>
+                <p class="text_bold">Focus Mode and Dark Theme</p>
+              </div>
+              <div class="notero__benefit">
+                <div>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                    class="bi bi-option" viewBox="0 0 16 16">
+                    <path
+                      d="M1 2.5a.5.5 0 0 1 .5-.5h3.797a.5.5 0 0 1 .439.26L11 13h3.5a.5.5 0 0 1 0 1h-3.797a.5.5 0 0 1-.439-.26L5 3H1.5a.5.5 0 0 1-.5-.5zm10 0a.5.5 0 0 1 .5-.5h3a.5.5 0 0 1 0 1h-3a.5.5 0 0 1-.5-.5z" />
+                  </svg>
+                </div>
+                <p class="text_bold">
+                  Export to Text, PDF, HTML and Markdown formats
+                </p>
+              </div>
+            </div>
+            <a href="pages/contact/index.html" class="button button_bigger button_active">
+              Register Now
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="support">
+      <div class="container support__container">
+        <p class="text_with-bg">Frequently Asked Question</p>
+        <p class="text_biggest">
+          Need A
+          <span class="text_gradient">Support?</span>
+        </p>
+        <div class="support__content">
+          <div class="support__left">
+            <button class="button-dropdown">
+              <div class="button-dropdown__top">
+                <p class="text text_bold">
+                  How Benefit That I Got When Choose Basic Plan?
+                </p>
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                  class="bi bi-chevron-down header__svg_tablet" viewBox="0 0 16 16">
+                  <path fill-rule="evenodd"
+                    d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z" />
+                </svg>
+              </div>
+              <p class="button-dropdown__bottom">
+                Images, videos, PDFs and audio files are supported. Create
+                math expressions and diagrams directly from the app. Take
+                photos with the mobile app and save them to a note.
+              </p>
+            </button>
+            <button class="button-dropdown ">
+              <div class="button-dropdown__top">
+                <p class="text text_bold">How Do I Organize My Notes?</p>
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                  class="bi bi-chevron-down header__svg_tablet" viewBox="0 0 16 16">
+                  <path fill-rule="evenodd"
+                    d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z" />
+                </svg>
+              </div>
+              <p class="button-dropdown__bottom">
+                Images, videos, PDFs and audio files are supported. Create
+                math expressions and diagrams directly from the app. Take
+                photos with the mobile app and save them to a note.
+              </p>
+            </button>
+            <button class="button-dropdown">
+              <div class="button-dropdown__top">
+                <p class="text text_bold">
+                  How About Data Security & NDA Agreement
+                </p>
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                  class="bi bi-chevron-down header__svg_tablet" viewBox="0 0 16 16">
+                  <path fill-rule="evenodd"
+                    d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z" />
+                </svg>
+              </div>
+              <p class="button-dropdown__bottom">
+                Images, videos, PDFs and audio files are supported. Create
+                math expressions and diagrams directly from the app. Take
+                photos with the mobile app and save them to a note.
+              </p>
+            </button>
+            <button class="button-dropdown">
+              <div class="button-dropdown__top">
+                <p class="text text_bold">How Long For A Standard Project</p>
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                  class="bi bi-chevron-down header__svg_tablet" viewBox="0 0 16 16">
+                  <path fill-rule="evenodd"
+                    d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z" />
+                </svg>
+              </div>
+              <p class="button-dropdown__bottom">
+                Images, videos, PDFs and audio files are supported. Create
+                math expressions and diagrams directly from the app. Take
+                photos with the mobile app and save them to a note.
+              </p>
+            </button>
+          </div>
+          <div class="support__right">
+            <button class="button-dropdown">
+              <div class="button-dropdown__top">
+                <p class="text text_bold">How Does Notero Store My Data?</p>
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                  class="bi bi-chevron-down header__svg_tablet" viewBox="0 0 16 16">
+                  <path fill-rule="evenodd"
+                    d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z" />
+                </svg>
+              </div>
+              <p class="button-dropdown__bottom">
+                Images, videos, PDFs and audio files are supported. Create
+                math expressions and diagrams directly from the app. Take
+                photos with the mobile app and save them to a note.
+              </p>
+            </button>
+            <button class="button-dropdown">
+              <div class="button-dropdown__top">
+                <p class="text text_bold">
+                  Does Notero Support Storing Data On ICloud?
+                </p>
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                  class="bi bi-chevron-down header__svg_tablet" viewBox="0 0 16 16">
+                  <path fill-rule="evenodd"
+                    d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z" />
+                </svg>
+              </div>
+              <p class="button-dropdown__bottom">
+                Images, videos, PDFs and audio files are supported. Create
+                math expressions and diagrams directly from the app. Take
+                photos with the mobile app and save them to a note.
+              </p>
+            </button>
+            <button class="button-dropdown">
+              <div class="button-dropdown__top">
+                <p class="text text_bold">
+                  Can My Premium License Be Used For All Devices?
+                </p>
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                  class="bi bi-chevron-down header__svg_tablet" viewBox="0 0 16 16">
+                  <path fill-rule="evenodd"
+                    d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z" />
+                </svg>
+              </div>
+              <p class="button-dropdown__bottom">
+                Images, videos, PDFs and audio files are supported. Create
+                math expressions and diagrams directly from the app. Take
+                photos with the mobile app and save them to a note.
+              </p>
+            </button>
+            <button class="button-dropdown">
+              <div class="button-dropdown__top">
+                <p class="text text_bold">Can I Lock My Note App?</p>
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                  class="bi bi-chevron-down header__svg_tablet" viewBox="0 0 16 16">
+                  <path fill-rule="evenodd"
+                    d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z" />
+                </svg>
+              </div>
+              <p class="button-dropdown__bottom">
+                Images, videos, PDFs and audio files are supported. Create
+                math expressions and diagrams directly from the app. Take
+                photos with the mobile app and save them to a note.
+              </p>
+            </button>
+            <button class="button-dropdown">
+              <div class="button-dropdown__top">
+                <p class="text text_bold">
+                  How Do I Change My Email Or Password?
+                </p>
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                  class="bi bi-chevron-down header__svg_tablet" viewBox="0 0 16 16">
+                  <path fill-rule="evenodd"
+                    d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z" />
+                </svg>
+              </div>
+              <p class="button-dropdown__bottom">
+                Images, videos, PDFs and audio files are supported. Create
+                math expressions and diagrams directly from the app. Take
+                photos with the mobile app and save them to a note.
+              </p>
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="community">
+      <div class="container community__container">
+        <p class="text_with-bg">Notero Community</p>
+        <p class="text_biggest">
+          Join Into
+          <span class="text_gradient">Our Hub</span>
+        </p>
+        <div class="community__content">
+          <a href="#" class="community__social">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="community__left"
+              viewBox="0 0 16 16">
+              <path
+                d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z" />
+            </svg>
+            <div class="community__right">
+              <p class="text_bigger">Github</p>
+              <p class="text_smallest">Open Source & Commnit Code</p>
+            </div>
+          </a>
+          <a href="#" class="community__social">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="community__left"
+              viewBox="0 0 16 16">
+              <path
+                d="M5.026 15c6.038 0 9.341-5.003 9.341-9.334 0-.14 0-.282-.006-.422A6.685 6.685 0 0 0 16 3.542a6.658 6.658 0 0 1-1.889.518 3.301 3.301 0 0 0 1.447-1.817 6.533 6.533 0 0 1-2.087.793A3.286 3.286 0 0 0 7.875 6.03a9.325 9.325 0 0 1-6.767-3.429 3.289 3.289 0 0 0 1.018 4.382A3.323 3.323 0 0 1 .64 6.575v.045a3.288 3.288 0 0 0 2.632 3.218 3.203 3.203 0 0 1-.865.115 3.23 3.23 0 0 1-.614-.057 3.283 3.283 0 0 0 3.067 2.277A6.588 6.588 0 0 1 .78 13.58a6.32 6.32 0 0 1-.78-.045A9.344 9.344 0 0 0 5.026 15z" />
+            </svg>
+            <div class="community__right">
+              <p class="text_bigger">Twitter</p>
+              <p class="text_smallest">Latest News & Update</p>
+            </div>
+          </a>
+          <a href="#" class="community__social">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="community__left"
+              viewBox="0 0 16 16">
+              <path
+                d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8.287 5.906c-.778.324-2.334.994-4.666 2.01-.378.15-.577.298-.595.442-.03.243.275.339.69.47l.175.055c.408.133.958.288 1.243.294.26.006.549-.1.868-.32 2.179-1.471 3.304-2.214 3.374-2.23.05-.012.12-.026.166.016.047.041.042.12.037.141-.03.129-1.227 1.241-1.846 1.817-.193.18-.33.307-.358.336a8.154 8.154 0 0 1-.188.186c-.38.366-.664.64.015 1.088.327.216.589.393.85.571.284.194.568.387.936.629.093.06.183.125.27.187.331.236.63.448.997.414.214-.02.435-.22.547-.82.265-1.417.786-4.486.906-5.751a1.426 1.426 0 0 0-.013-.315.337.337 0 0 0-.114-.217.526.526 0 0 0-.31-.093c-.3.005-.763.166-2.984 1.09z" />
+            </svg>
+            <div class="community__right">
+              <p class="text_bigger">Telegram</p>
+              <p class="text_smallest">Chanel for Community</p>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer>
+    <div class="footer__wave"></div>
+    <div class="container footer__container">
+      <div class="footer__top">
+        <p class="text_biggest">
+          Ready To <span class="text_gradient">Download</span>
+        </p>
+        <p>
+          Discover your new favorite spaces, from Sao Paulo to Seoul. Download
+          from App Store or Google Play.
+        </p>
+        <div class="footer__buttons">
+          <a href="https://www.apple.com/app-store/" target="_blank" class="button button_bigger button_active">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-apple"
+              viewBox="0 0 16 16">
+              <path
+                d="M11.182.008C11.148-.03 9.923.023 8.857 1.18c-1.066 1.156-.902 2.482-.878 2.516.024.034 1.52.087 2.475-1.258.955-1.345.762-2.391.728-2.43Zm3.314 11.733c-.048-.096-2.325-1.234-2.113-3.422.212-2.189 1.675-2.789 1.698-2.854.023-.065-.597-.79-1.254-1.157a3.692 3.692 0 0 0-1.563-.434c-.108-.003-.483-.095-1.254.116-.508.139-1.653.589-1.968.607-.316.018-1.256-.522-2.267-.665-.647-.125-1.333.131-1.824.328-.49.196-1.422.754-2.074 2.237-.652 1.482-.311 3.83-.067 4.56.244.729.625 1.924 1.273 2.796.576.984 1.34 1.667 1.659 1.899.319.232 1.219.386 1.843.067.502-.308 1.408-.485 1.766-.472.357.013 1.061.154 1.782.539.571.197 1.111.115 1.652-.105.541-.221 1.324-1.059 2.238-2.758.347-.79.505-1.217.473-1.282Z" />
+              <path
+                d="M11.182.008C11.148-.03 9.923.023 8.857 1.18c-1.066 1.156-.902 2.482-.878 2.516.024.034 1.52.087 2.475-1.258.955-1.345.762-2.391.728-2.43Zm3.314 11.733c-.048-.096-2.325-1.234-2.113-3.422.212-2.189 1.675-2.789 1.698-2.854.023-.065-.597-.79-1.254-1.157a3.692 3.692 0 0 0-1.563-.434c-.108-.003-.483-.095-1.254.116-.508.139-1.653.589-1.968.607-.316.018-1.256-.522-2.267-.665-.647-.125-1.333.131-1.824.328-.49.196-1.422.754-2.074 2.237-.652 1.482-.311 3.83-.067 4.56.244.729.625 1.924 1.273 2.796.576.984 1.34 1.667 1.659 1.899.319.232 1.219.386 1.843.067.502-.308 1.408-.485 1.766-.472.357.013 1.061.154 1.782.539.571.197 1.111.115 1.652-.105.541-.221 1.324-1.059 2.238-2.758.347-.79.505-1.217.473-1.282Z" />
+            </svg>
+            &nbsp;&nbsp;|&nbsp;&nbsp;Download on App Store
+          </a>
+          <a href="https://play.google.com/store" target="_blank" class="button button_bigger">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-google-play"
+              viewBox="0 0 16 16">
+              <path
+                d="M14.222 9.374c1.037-.61 1.037-2.137 0-2.748L11.528 5.04 8.32 8l3.207 2.96 2.694-1.586Zm-3.595 2.116L7.583 8.68 1.03 14.73c.201 1.029 1.36 1.61 2.303 1.055l7.294-4.295ZM1 13.396V2.603L6.846 8 1 13.396ZM1.03 1.27l6.553 6.05 3.044-2.81L3.333.215C2.39-.341 1.231.24 1.03 1.27Z" />
+            </svg>
+            &nbsp;&nbsp;|&nbsp;&nbsp;Download on Google Play</a>
+        </div>
+      </div>
+      <div class="footer__center">
+        <a href="#">
+          <img class="logo" src="/assets/logo-5459de93.png" alt="logo" />
+        </a>
+        <nav class="navigation footer__navigation">
+          <ul>
+            <li>
+              <a class="link" href="pages/about/index.html">About</a>
+            </li>
+            <li>
+              <a class="link" href="pages/product/index.html">Product</a>
+            </li>
+            <li>
+              <a class="link" href="pages/service/index.html">Service</a>
+            </li>
+            <li><a class="link" href="pages/shop/index.html">Shop</a></li>
+            <li>
+              <a class="link" href="pages/project/index.html">Project</a>
+            </li>
+            <li><a class="link" href="pages/post/index.html">Post</a></li>
+            <li>
+              <a class="link" href="pages/portfolio/index.html">Portfolio</a>
+            </li>
+            <li><a class="link" href="pages/blog/index.html">Blog</a></li>
+            <li>
+              <a class="link" href="pages/contact/index.html">Contact</a>
+            </li>
+          </ul>
+        </nav>
+        <a href="pages/contact/index.html" class="button footer__button">
+          Join Itech Hub&nbsp;&nbsp;
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right"
+            viewBox="0 0 16 16">
+            <path fill-rule="evenodd"
+              d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z" />
+          </svg>
+        </a>
+      </div>
+      <div class="footer__bottom">
+        © 2023 Copyrights by <a href="#" class="link">Iteck Co.</a> All Rights
+        Reserved. Designed by
+        <a class="link" href="https://github.com/agronom99" target="_blank">Vitalii</a>
+      </div>
+    </div>
+  </footer>
+</body>
+
+</html>
